@@ -1,0 +1,146 @@
+<!doctype html>
+<!--
+  senariadame - single-file Linktree-style landing page
+  Instructions: save this file as index.html at your repo root.
+  To use a custom domain (senariadame.com):
+    1) Create a file named CNAME (no extension) containing exactly: senariadame.com
+    2) In your domain registrar DNS settings, add these A records:
+         185.199.108.153
+         185.199.109.153
+         185.199.110.153
+         185.199.111.153
+       And a CNAME for 'www' pointing to: <your-github-username>.github.io
+    3) Enable GitHub Pages for the repository (branch: main, folder: /).
+    4) Wait ~5-30 minutes for DNS + GitHub certificate provisioning.
+
+  Note: Replace any placeholder text/links below with your preferred wording.
+-->
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Senari Adame</title>
+  <meta name="description" content="Senari Adame — Links" />
+  <meta name="theme-color" content="#ffb6d9" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='100%' height='100%' fill='%23ff6fa6'/><text x='50%' y='60%' font-size='18' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'>S</text></svg>">
+  <style>
+    /* Reset + base */
+    :root{
+      --pink:#ff6fa6;
+      --pink-2:#ffb6d9;
+      --gray:#f6f6f8;
+      --muted:#666;
+      --black:#0b0b0b;
+      --glass: rgba(255,255,255,0.55);
+      --radius: 14px;
+      --max-width:520px;
+      --safe-padding:24px;
+      --shadow: 0 8px 28px rgba(11,11,11,0.12);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #fff0f6 0%, #fff7fb 35%, #ffffff 100%);
+      color:var(--black);
+      -webkit-font-smoothing:antialiased;
+      display:flex;align-items:center;justify-content:center;padding:40px;
+    }
+
+    /* Card */
+    .card{
+      width:100%;
+      max-width:var(--max-width);
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85));
+      border-radius:24px;
+      padding:calc(var(--safe-padding));
+      box-shadow:var(--shadow);
+      text-align:center;
+      border: 1px solid rgba(255,111,166,0.08);
+    }
+
+    .avatar{
+      width:110px;height:110px;border-radius:999px;margin:0 auto 14px;background:linear-gradient(135deg,var(--pink),var(--pink-2));display:grid;place-items:center;color:white;font-weight:700;font-size:40px;box-shadow:0 6px 18px rgba(255,111,166,0.18);
+    }
+    h1{margin:6px 0 2px;font-size:22px;letter-spacing:0.4px}
+    p.lead{margin:0 0 18px;color:var(--muted);font-size:14px}
+
+    /* Links list */
+    .links{display:flex;flex-direction:column;gap:12px;margin-top:6px}
+    a.btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:14px 18px;border-radius:14px;text-decoration:none;font-weight:600;
+      box-shadow:0 6px 18px rgba(11,11,11,0.06);
+      transition:transform .14s ease, box-shadow .14s ease;
+      border: 1px solid rgba(11,11,11,0.04);
+    }
+    a.btn:active{transform:translateY(1px)}
+
+    /* Variant styles */
+    .btn--primary{background:linear-gradient(90deg,var(--pink),#ff83b8);color:white}
+    .btn--soft{background:var(--gray);color:var(--black);}
+    .btn--alt{background:linear-gradient(90deg,#222, #333);color:white}
+
+    /* small labels */
+    .small{font-size:12px;color:var(--muted);margin-top:14px}
+
+    /* footer */
+    .footer{margin-top:18px;font-size:12px;color:var(--muted)}
+
+    /* Responsive tweaks */
+    @media (max-width:420px){
+      .card{padding:18px;border-radius:18px}
+      .avatar{width:92px;height:92px;font-size:34px}
+    }
+
+    /* Cute decorative hearts */
+    .hearts{position:absolute;left:12px;top:12px;opacity:0.9}
+    .heart{width:14px;height:14px;margin:6px;display:inline-block}
+  </style>
+</head>
+<body>
+  <div class="hearts" aria-hidden>
+    <svg class="heart" viewBox="0 0 24 24"><path fill="#ffd6e9" d="M12 21s-7-4.35-9.24-7.09C-0.17 9.68 4.4 4 8.5 6.5 10 7.61 12 9.5 12 9.5s2-1.89 3.5-3c4.1-2.5 8.67 3.18 5.74 7.41C19 16.65 12 21 12 21z"/></svg>
+    <svg class="heart" viewBox="0 0 24 24"><path fill="#ffb6d9" d="M12 21s-7-4.35-9.24-7.09C-0.17 9.68 4.4 4 8.5 6.5 10 7.61 12 9.5 12 9.5s2-1.89 3.5-3c4.1-2.5 8.67 3.18 5.74 7.41C19 16.65 12 21 12 21z"/></svg>
+  </div>
+
+  <main class="card" role="main">
+    <div class="avatar" aria-hidden>SA</div>
+    <h1>Senari Adame</h1>
+    <p class="lead">Welcome — tap a link below ✨</p>
+
+    <div class="links" role="navigation" aria-label="Senari Adame links">
+      <a class="btn btn--primary" href="https://cash.app/$senariadame" target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M4 4h16v16H4z" fill="white" opacity="0.06"/><path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z" fill="none" stroke="white" opacity="0.0"/></svg>
+        Send tip — CashApp
+      </a>
+
+      <a class="btn btn--soft" href="https://onlyfans.com/senarisells" target="_blank" rel="noopener noreferrer">
+        🔞 OnlyFans — senarisells
+      </a>
+
+      <a class="btn btn--soft" href="https://onlyfans.com/senari" target="_blank" rel="noopener noreferrer">
+        🔞 OnlyFans — senari
+      </a>
+
+      <!-- Example extra link button (hidden by default). Remove if not needed -->
+      <!-- <a class="btn btn--alt" href="#" target="_blank" rel="noopener noreferrer">Portfolio / Shop</a> -->
+    </div>
+
+    <p class="small">Links open in a new tab. For business inquiries use the links above.</p>
+    <div class="footer">© <span id="year"></span> Senari Adame</div>
+  </main>
+
+  <script>
+    // Small JS to set year and add subtle animated pulse
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Add a gentle hover effect for accessibility
+    document.querySelectorAll('a.btn').forEach(btn => {
+      btn.addEventListener('mouseenter', () => btn.style.transform = 'translateY(-4px)');
+      btn.addEventListener('mouseleave', () => btn.style.transform = 'translateY(0)');
+    });
+  </script>
+</body>
+</html>
